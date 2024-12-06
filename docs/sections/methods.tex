@@ -1,0 +1,11 @@
+\section{Methods}
+For best performance, we used the following methods in our project.
+\subsection{Data Preprocessing}
+The original data contained long sequences of ACTG characters. We split the sequences into k-mers of length 4,5,6, and then counted the frequency of each k-mer in each sequence. Lastly we divided the frequency of each k-mer by its length.
+This approach allows for analysis of data of different lengths and it condenses the data into a more manageable form.
+
+
+
+\subsection{Classifier}
+For classification, we used the support vector machine classifier (SVC from sklearn). The SVC was picked due to its simplicity and efficiency.
+

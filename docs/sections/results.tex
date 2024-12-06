@@ -1,0 +1,73 @@
+\section{Results}
+To measure the quality of classifiers we used the 10-fold corss-validation method. 
+We used two datasets.
+The first one being a set of labeled sequences labeled positive or negative taken from the VISTA database.
+The second dataset used the same positive data as the first one but used random sequences from the human genome as negative data.
+The results are detailed in this section. The confusion matrices are show in the appendix.
+
+\subsection{4-mers}
+Using the 4-mers as features, we obtained the following results:
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Metric} & \textbf{Value for first dataset} & \textbf{Value for the second dataset} \\
+  \hline
+AUC-ROC   & 0.6459 & 0.9918 \\
+Accuracy  & 0.6083 & 0.9637 \\
+Precision & 0.6062 & 0.9799 \\
+Recall    & 0.7630 & 0.9517 \\
+F1-Score  & 0.6756 & 0.9656 \\
+  \hline
+\end{tabular}
+\caption{Performance Metrics for 4-mers.}
+\end{table}
+
+\subsection{5-mers}
+Using the 5-mers as features, we obtained the following results:
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Metric} & \textbf{Value for first dataset} & \textbf{Value for the second dataset} \\
+  \hline
+AUC-ROC   & 0.6662 & 0.9915 \\
+Accuracy  & 0.6218 & 0.9603 \\
+Precision & 0.6243 & 0.9729 \\
+Recall    & 0.7348 & 0.9522 \\
+F1-Score  & 0.6751 & 0.9624 \\
+  \hline
+\end{tabular}
+\caption{Performance Metrics for 5-mers.}
+\end{table}
+
+\subsection{6-mers}
+Using the 6-mers as features, we obtained the following results:
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Metric} & \textbf{Value for first dataset} & \textbf{Value for the second dataset} \\
+  \hline
+AUC-ROC   & 0.6752 & 0.9896 \\
+Accuracy  & 0.6288 & 0.9519 \\
+Precision & 0.6351 & 0.9584 \\
+Recall    & 0.7183 & 0.9513 \\
+F1-Score  & 0.6741 & 0.9548 \\
+  \hline
+\end{tabular}
+\caption{Performance Metrics for 6-mers.}
+\end{table}
+
+\subsection{Comparison}
+The results clearly show two things. 
+First the larger the k-mer the better the results. 
+Although it gives better results it also increases the processing time as the number of features grows exponentially with the k growing. 
+The calculation for 6-mers took 10 times longer than for 4-mers.
+
+The second thing the results show it that the second dataset gives much better results than the first one.
+The accuracy for the second dataset is around 30\% points higher.
+This could not be explained due to the quality of the data.
+The most likely explanation is that the model realized that the negative data from the second dataset came from a different source (human DNA).
+
+
